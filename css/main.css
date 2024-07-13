@@ -1,0 +1,660 @@
+:root {
+    --main-color: #FF9800;
+    --secound-color: rgb(0 128 0 / 60%);
+}
+body {
+    font-family: "Open Sans", sans-serif;
+}
+* {
+    box-sizing: border-box;
+}
+.container {
+    width: 1170px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin: auto;
+}
+/* Start Setting Page  */
+.setting-box {
+    position: fixed;
+    background-color: #FFF;
+    left: -200px;
+    top: 0;
+    width: 200px;
+    z-index: 1000;
+    min-height: 100vh;
+    transition: .3s;
+}
+.setting-box.open {
+    left: 0;
+}
+.setting-box .toggle-setting {
+    position: absolute;
+    right: -30px;
+    top: 100px;
+    background-color: #FFF;
+    text-align: center;
+    cursor: pointer;
+}
+.setting-box .toggle-setting .icon {
+    width: 30px;
+    padding: 8px 0;
+}
+.setting-box .setting-container {
+    text-align: center;
+}
+.setting-box .option-box {
+    padding: 10px;
+    background-color: #EEE;
+    margin: 10px;
+}
+.setting-box h4 {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+}
+.setting-box .color-list {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    margin: 10px 0 0;
+}
+.setting-box .option-box .color-list li {
+    width: 25px;
+    height: 25px;
+    background-color: #333;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
+    border: 3px solid #FFF;
+}
+.setting-box .option-box .color-list li.active {
+    border-color: #FFF;
+}
+.setting-box .color-list li:first-child {
+    background-color: var(--main-color);
+}
+.setting-box .color-list li:nth-child(2) {
+    background-color: grey;
+}
+.setting-box .color-list li:nth-child(3) {
+    background-color: darkcyan;
+}
+.setting-box .color-list li:nth-child(4) {
+    background-color: skyblue;
+}
+.setting-box .color-list li:nth-child(5) {
+    background-color: hotpink;
+}
+.option-box .reandom-background .push,
+.option-box .reandom-background .delete{
+    width: 50px;
+    background-color: rgb(0 128 0 / 60%);
+    display: inline-block;
+    color: #FFF;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 4px 5px;
+    margin-top: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: .5;
+}
+.option-box .reandom-background .push.active {
+    opacity: 1;
+}
+.option-box .reandom-background .delete:hover {
+    opacity: 1;
+}
+/* End Setting Page  */
+
+/* Start Nav Bullets */
+.nav-bullet {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    z-index: 1000;
+}
+.nav-bullet .bullet {
+    width: 20px;
+    height: 20px;
+    border: 3px solid var(--main-color);
+    margin: 20px auto;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+}
+.nav-bullet .bullet .tooltip {
+    background-color: var(--main-color);
+    width: 100px;
+    color: #FFF;
+    position: absolute;
+    right: 32px;
+    /* padding: 8px 10px; */
+    /* top: -10px; */
+    text-align: center;
+    cursor: default;
+    pointer-events: none;
+    display: none;
+}
+.nav-bullet .bullet:hover .tooltip {
+    display: block;
+}
+.nav-bullet .bullet .tooltip::before {
+    content: '';
+    border-style: solid;
+    border-width: 10px;
+    border-color: transparent transparent transparent var(--main-color);
+    position: absolute;
+    height: 0;
+    width: 0;
+    right: -19px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+/* End Nav Bullets */
+
+.landing-page {
+    min-height: 100vh;
+    background-image: url(../imgs/01.webp);
+    background-size: cover;
+    position: relative;
+}
+.landing-page .overlay {
+    background-color: rgb(0 0 0 / .6);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+.header {
+    position: relative;
+    color: #FFF;
+    z-index: 2;
+    display: flex;
+    padding: 10px;
+}
+.header .logo {
+    width: 300px;
+    padding: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.header .logo span {
+    color: var(--main-color);
+}
+.header .links {
+    list-style: none;
+    width: 100%;
+    padding-left: 0;
+    text-align: right;
+    padding-right: 20px;
+}
+.header .links li {
+    display: inline-block;
+    margin-left: 10px;
+}
+.header .links li a {
+    text-decoration: none;
+    color: #FFF;
+    font-weight: 700;
+}
+.header .links li a.active {
+    padding: 10px;
+    background-color: var(--main-color);
+    border-radius: 10px;
+}
+.header .links li a.active:hover {
+    opacity: .7;
+    transition: .3s;
+}
+.header .links li a.active:hover {
+    color: #FFF;
+}
+.header .links li a:hover {
+    color: rgb(0 128 0 / 60%);
+    transition: .3s;
+}
+.header .links li a.rel {
+    padding: 10px;
+    border-radius: 10px;
+
+}
+.header .links li a.rel:hover {
+    border: 2px solid var(--main-color);
+    color: #767676;
+}
+.concept {
+    color: #FFF;
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.concept h1 {
+    font-size: 34px;
+    margin: 0 0 12px;
+}
+.concept h1 span {
+    color: var(--main-color);
+}
+.concept p {
+    line-height: 1.6;
+    font-size: 20px;
+}
+.btn {
+    padding: 20px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #FFF;
+    background-color: var(--main-color);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.btn:hover {
+    opacity: .7;
+    transition: .3s;
+}
+/* Start About US  */
+.about-us {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+}
+.about-us .info-box {
+    flex: 1;
+    padding: 30px;
+}
+.about-us .info-box .about {
+    color: #000;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 11px;
+    padding: 10px;
+}
+.about-us .info-box h2 {
+    font-weight: bold;
+    font-size: 35px;
+    margin: 0 0 10px;
+}
+.about-us .info-box p {
+    line-height: 1.8;
+    color: #767676;
+    margin: 0;
+}
+.about-us .info-box button {
+    background-color: var(--main-color);
+    border: none;
+    padding: 15px;
+    margin: 20px 0 0 0;
+    color: #FFF;
+    font-size: 17px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.about-us .info-box button:hover {
+    opacity: .7;
+    transition: .3s;
+}
+.about-us .image-box {
+    flex: 1;
+    text-align: center;
+}
+.about-us .image-box img {
+    width: 300px;
+    height: 57vh;
+}
+/* End About US  */
+/* Start Skills */
+.skills {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #EEE;
+}
+.skills h2 {
+    font-weight: bold;
+    font-size: 30px;
+    color: var(--main-color);
+    margin: 0 0 50px;
+    text-align: center;
+}
+.skills .skills-box {
+    background-color: #FFF;
+    display: flex;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+.skills .skills-box .skill-name {
+    font-weight: bold;
+    width: 140px;
+    text-align: center;
+    line-height: 30px;
+}
+.skills .skills-box .skill-progres {
+    height: 30px;
+    width: 100%;
+    background-color: #f6f6f6 ;
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+}
+.skills .skills-box .skill-progres span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    transition: all 2s;
+    /* background-color: var(--main-color); */
+}
+.skills .skills-box .skill-progres .color1 {
+    background-color: #008b8b;
+}
+.skills .skills-box .skill-progres .color2 {
+    background-color: #ff9800;
+}
+.skills .skills-box .skill-progres .color3 {
+    background-color: #ff69b4;
+}
+.skills .skills-box .skill-progres .color4 {
+    background-color: #607D8B;
+}
+.skills .skills-box .skill-progres .color5 {
+    background-color: #2196F3;
+}
+/* End Skills */
+/* Start Gullary */
+.gullary {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.gullary h2 {
+    font-weight: bold;
+    font-size: 30px;
+    color: var(--main-color);
+    margin: 0 0 50px;
+    text-align: center;
+}
+.gullary .box-imgs {
+    text-align: center;
+}
+.gullary .box-imgs img {
+    width: 200px;
+    padding: 3px;
+    background-color: #F6F6F6;
+    border: 1px solid #CCC;
+    margin: 5px;
+    cursor: pointer
+}
+.pop-overlay {
+    position: fixed;
+    background-color: rgb(0, 0, 0, .7);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+.popup-box {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #FFF;
+    border: 2px solid #CCC;
+    padding: 20px;
+    z-index: 1001;
+
+}
+.popup-box h3 {
+    font-weight: bold;
+    text-align: center;
+    color: var(--main-color);
+    margin: 0 0 20px;
+}
+.popup-box img {
+    max-width: 100%;
+}
+.close-button {
+    position: absolute;
+    left: -15px;
+    top: -15px;
+    background-color: var(--main-color);
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+    color: #FFF;
+    font-weight: bold;
+}
+/* End Gullary */
+/* Start TimeLine */
+.timeline {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #EEE;
+}
+.timeline .timeline-container {
+    position: relative;
+    overflow: hidden;
+}
+.timeline .timeline-container::before {
+    content: '';
+    width: 2px;
+    height: 100%;
+    background-color: var(--main-color);
+    position: absolute;
+    left: 50%;
+    margin-left: -1px;
+    top: 0;
+}
+.timeline .timeline-container .year {
+    margin: 20px auto;
+    width: 50px;
+    background-color: var(--main-color);
+    text-align: center;
+    z-index: 2;
+    color: #FFF;
+    font-weight: bold;
+    padding: 2px 5px;
+    border-radius: 4px;
+    position: relative;
+}
+.timeline .timeline-container .left,
+.timeline .timeline-container .right {
+    width: calc(50% - 25px);
+    position: relative;
+    margin-bottom: 40px;
+}
+.timeline .timeline-container .left {
+    float: left;
+}
+.timeline .timeline-container .right {
+    float: right;
+}
+.timeline .timeline-container .left::before {
+    right: -35px;
+}
+.timeline .timeline-container .right::before {
+    left: -35px;
+}
+.timeline .timeline-container .left::before,
+.timeline .timeline-container .right::before {
+    content: '';
+    width: 14px;
+    height: 14px;
+    background-color: #FFF;
+    border: 3px solid var(--main-color);
+    position: absolute;
+    border-radius: 50%;
+    top: 20px;
+}
+.timeline .timeline-container .content {
+    padding: 20px;
+    background-color: #FFF;
+}
+.timeline .timeline-container .content h3 {
+    font-weight: bold;
+    color: var(--main-color);
+    margin: 0 0 10px;
+}
+.timeline .timeline-container .content p {
+    color: #666;
+    margin: 0;
+    line-height: 1.6;
+}
+.clearfix {
+    clear: both;
+}
+.timeline .timeline-container .left .content::before {
+    content: '';
+    border-style: solid;
+    border-width: 10px;
+    border-color: transparent transparent transparent #FFF;
+    position: absolute;
+    height: 0;
+    width: 0;
+    right: -19px;
+    top: 20px;
+}
+.timeline .timeline-container .right .content::before {
+    content: '';
+    border-style: solid;
+    border-width: 10px;
+    border-color: transparent #FFF transparent transparent ;
+    position: absolute;
+    height: 0;
+    width: 0;
+    left: -19px;
+    top: 20px;
+}
+/* End TimeLine */
+/* Start Fetures */
+.fetures {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+.fetures h2 {
+    font-weight: bold;
+    font-size: 30px;
+    color: var(--main-color);
+    margin: 0 0 50px;
+    text-align: center;
+}
+.fetures .feat-box {
+    width: calc(100% / 3);
+    float: left;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.fetures .feat-box img {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    border: 3px solid #CCC;
+    padding: 3px;
+}
+.fetures .feat-box h4 {
+    font-size: 20px;
+    position: relative;
+    margin: 15px 0 40px;
+}
+.fetures .feat-box h4::before {
+    content: '';
+    width: 40px;
+    position: absolute;
+    height: 4px;
+    background-color: var(--main-color);
+    left: 50%;
+    margin-left: -20px;
+    bottom: -22px;
+    border-radius: 2px;
+}
+.fetures .feat-box p {
+    width: 80%;
+    line-height: 1.7;
+    margin: 0 auto;
+}
+/* End Fetures */
+
+
+/* Start Testimonials */
+.testimonials {
+    position: relative;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+.testimonials::before {
+    content: '';
+    width: 50%;
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: var(--main-color);
+}
+.testimonials::after {
+    content: '';
+    width: 50%;
+    position: absolute;
+    height: 100%;
+    right: 0;
+    top: 0;
+    background-color: #333;
+}
+.testimonials h2 {
+    font-weight: bold;
+    font-size: 30px;
+    color: #FFF;
+    margin: 0 0 50px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+.testimonials .tst-box {
+    position: relative;
+    z-index: 2;
+    width: calc(98% / 3);
+    float: left;
+    background-color: #FFF;
+    padding: 20px;
+}
+.testimonials .tst-box:not(:last-of-type) {
+    margin-right: 1%;
+}
+.testimonials .tst-box > p {
+    margin: 0 0 20px;
+    line-height: 1.6;
+    font-size: 18px;
+    color: #707070;
+    font-style: italic;
+}
+.testimonials .tst-box .person-info {
+    overflow: hidden;
+}
+.testimonials .tst-box .person-info img {
+    float: left;
+    border-radius: 50%;
+    margin-right: 10px;
+    width: 80px;
+}
+.testimonials .tst-box .person-info h4 {
+    margin: 14px 0 5px;
+}
+.testimonials .tst-box .person-info p {
+    color: #707070;
+    margin: 0;
+}
+/* End Testimonials */
+
